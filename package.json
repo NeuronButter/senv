@@ -1,0 +1,12 @@
+{
+  "name": "senv",
+  "version": "1.0.0",
+  "description": "Effortlessly switch between .env files.",
+  "main": "index.js",
+  "bin": {
+    "senv": "./bin/index.js"
+  },
+  "keywords": ["switch", "environment", "env"],
+  "author": "Neeron Bhatta",
+  "license": "ISC"
+}
