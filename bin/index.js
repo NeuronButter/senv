@@ -11,15 +11,17 @@ let log = msg => {
   }
 }
 
-if (fs.existsSync(path.resolve(__dirname, '../.env'))) {
-  fs.unlinkSync(path.resolve(__dirname, '../.env'))
+console.log(path.resolve(process.cwd(), './.env'))
+
+if (fs.existsSync(path.resolve(process.cwd(), './.env'))) {
+  fs.unlinkSync(path.resolve(process.cwd(), './.env'))
   log('✅ .env file deleted / unlinked')
 } else log("⏩ .env file doesn't exist")
 
-if (fs.existsSync(path.resolve(__dirname, `../.env.${arg}`))) {
+if (fs.existsSync(path.resolve(process.cwd(), `./.env.${arg}`))) {
   fs.symlinkSync(
-    path.resolve(__dirname, `../.env.${arg}`),
-    path.resolve(__dirname, '../.env')
+    path.resolve(process.cwd(), `./.env.${arg}`),
+    path.resolve(process.cwd(), './.env')
   )
   log(`✅ .env.${arg} file linked`)
 } else console.log('❌ No such file .env.' + arg)
