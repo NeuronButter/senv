@@ -11,8 +11,6 @@ let log = msg => {
   }
 }
 
-console.log(path.resolve(process.cwd(), './.env'))
-
 if (fs.existsSync(path.resolve(process.cwd(), './.env'))) {
   fs.unlinkSync(path.resolve(process.cwd(), './.env'))
   log('✅ .env file deleted / unlinked')
